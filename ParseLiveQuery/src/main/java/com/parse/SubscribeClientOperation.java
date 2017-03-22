@@ -22,7 +22,11 @@ import org.json.JSONObject;
         jsonObject.put("requestId", requestId);
         jsonObject.put("sessionToken", sessionToken);
 
-        JSONObject queryJsonObject = state.toJSON(PointerEncoder.get());
+        JSONObject queryJsonObject = new JSONObject();
+        queryJsonObject.put("className", state.className());
+
+        PointerEncoder pointerEncoder = PointerEncoder.get();
+        queryJsonObject.put("where", pointerEncoder.encode(state.constraints()));
 
         jsonObject.put("query", queryJsonObject);
 

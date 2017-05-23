@@ -1,4 +1,8 @@
-package com.parse;
+package com.parse.livequery;
+
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.PointerEncoder;
 
 import org.json.JSONException;
 import org.json.JSONObject;

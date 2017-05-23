@@ -1,4 +1,7 @@
-package com.parse;
+package com.parse.livequery;
+
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 
 import java.net.URI;
 import java.util.concurrent.Executor;

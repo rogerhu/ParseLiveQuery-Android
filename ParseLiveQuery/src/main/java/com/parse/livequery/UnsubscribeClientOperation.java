@@ -1,4 +1,4 @@
-package com.parse;
+package com.parse.livequery;
 
 import org.json.JSONException;
 import org.json.JSONObject;

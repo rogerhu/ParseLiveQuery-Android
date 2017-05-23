@@ -1,7 +1,15 @@
-package com.parse;
+package com.parse.livequery;
 
 import android.util.Log;
 import android.util.SparseArray;
+
+import com.parse.Parse;
+import com.parse.ParseDecoder;
+import com.parse.ParseObject;
+import com.parse.ParsePlugins;
+import com.parse.ParseQuery;
+import com.parse.ParseRESTCommand;
+import com.parse.ParseUser;
 
 import org.json.JSONException;
 import org.json.JSONObject;

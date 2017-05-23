@@ -1,6 +1,12 @@
 package com.parse;
 
-import org.assertj.core.api.Assertions;
+import com.parse.livequery.LiveQueryException;
+import com.parse.livequery.ParseLiveQueryClient;
+import com.parse.livequery.ParseLiveQueryClientCallbacks;
+import com.parse.livequery.SubscriptionHandling;
+import com.parse.livequery.WebSocketClient;
+import com.parse.livequery.WebSocketClientFactory;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.After;
@@ -466,7 +472,7 @@ public class TestParseLiveQueryClient {
         callbacks.transcript.assertNoEventsSoFar();
 
         webSocketClientCallback.onMessage(createErrorMessage(1).toString());
-        callbacks.transcript.assertEventsSoFar("onLiveQueryError: com.parse.LiveQueryException$ServerReportedException: Server reported error; code: 1, error: testError, reconnect: true");
+        callbacks.transcript.assertEventsSoFar("onLiveQueryError: com.parse.livequery.LiveQueryException$ServerReportedException: Server reported error; code: 1, error: testError, reconnect: true");
     }
 
     private SubscriptionHandling<ParseObject> createSubscription(ParseQuery<ParseObject> parseQuery,
